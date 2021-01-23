@@ -40,7 +40,7 @@ function paintWeather(data) {
     const weather = data.weather[0].id;
     const weatherCode = getWCode(weather);
     const location = data.name;
-    const weatherIcon = `http://openweathermap.org/img/wn/${weatherCode}@2x.png`
+    const weatherIcon = `https://openweathermap.org/img/wn/${weatherCode}@2x.png`
     const currentWeather = document.createElement("span");
     currentWeather.innerHTML = `${location} ${temp}℃`;
     const img = document.createElement("img");
@@ -56,26 +56,23 @@ function geoSuc(position) {
         longitude: coords.longitude
     };
     localStorage.setItem(LOC, JSON.stringify(location));
-    return location;
-}
-function geoErr(err) {
-    console.log(err, "Can't get current position.");
+    getWeather(location.latitude, location.longitude);
 }
 function getLocation() {
-    const location = navigator.geolocation.getCurrentPosition(geoSuc, geoErr);
-    return location;
+    const result = navigator.geolocation.getCurrentPosition(geoSuc);
+    return result;
+}
+function getWeather(lat, lon) {
+    const API_URL = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${API_KEY}&units=metric`
+    fetch(API_URL).then((response) => { return response.json() }).then((json) => { paintWeather(json) });
 }
 function loadWeather() {
     const location = JSON.parse(localStorage.getItem(LOC));
     if (location) {
         getWeather(location.latitude, location.longitude);
     } else {
-        getLocation().then((loc) => getWeather(loc.latitude, loc.longitude));
+        getLocation();
     }
-}
-function getWeather(lat, lon) {
-    const API_URL = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${API_KEY}&units=metric`
-    fetch(API_URL).then((response) => { return response.json() }).then((json) => {paintWeather(json)});
 }
 function init() {
     loadWeather();

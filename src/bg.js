@@ -2,13 +2,12 @@ const body = document.querySelector("body");
 const searchForm = document.querySelector(".bgSelectorForm"),
     search = searchForm.querySelector(".bgSelector")
 
-let KEYWORD = "landscape";
+let KEYWORD = "keyword";
 
 function handleSearch(event) {
     event.preventDefault();
     const keyword = search.value;
     localStorage.setItem(KEYWORD, keyword);
-    KEYWORD = keyword;
     paintBg(KEYWORD);
 }
 function paintBg(keyword) {
@@ -20,7 +19,7 @@ function paintBg(keyword) {
 function init() {
     searchForm.addEventListener("submit", handleSearch);
     const bgKey = localStorage.getItem(KEYWORD);
-    paintBg(bgKey);
+    window.addEventListener("load", paintBg(bgKey));
 }
 
 init();
