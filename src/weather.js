@@ -1,5 +1,5 @@
 const weatherContainer = document.querySelector(".weatherContainer");
-const API_KEY = "679da896709c168af12bdb7ed96ed5b2";
+// const API_KEY = "";
 const LOC = "location";
 
 function getWCode(id) {
