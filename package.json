@@ -1,0 +1,33 @@
+{
+  "name": "lucettin5",
+  "version": "1.0.0",
+  "description": "make new .io",
+  "main": "index.js",
+  "repository": "https://github.com/LucetTin5/LucetTin5.git",
+  "author": "LucetTin5 <lucettin5@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "dev": "gulp dev",
+    "build": "gulp build",
+    "deploy": "gulp deploy"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.4.5",
+    "@babel/preset-env": "^7.4.5",
+    "@babel/register": "^7.4.4",
+    "del": "^4.1.1",
+    "gulp": "^4.0.2",
+    "gulp-image": "^4.4.1",
+    "gulp-pug": "^4.0.1",
+    "gulp-webserver": "^0.9.1",
+    "gulp-autoprefixer": "^6.1.0",
+    "gulp-clean-css": "^4.3.0",
+    "gulp-sass": "^4.0.2",
+    "node-sass": "^4.12.0",
+    "babelify": "^10.0.0",
+    "uglifyify": "^5.0.2",
+    "dotenv": "^8.2.0",
+    "gulp-bro": "^2.0.0",
+    "gulp-gh-pages": "^0.5.4"
+  }
+}
