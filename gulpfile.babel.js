@@ -1,82 +1,78 @@
 import gulp from "gulp";
-import gpug from "gulp-pug";
-import del from "del";
-import ws from "gulp-webserver";
-import imageOpt from "gulp-image";
+import pug from "gulp-pug";
 import gsass from "gulp-sass";
-import autoprefixer from "gulp-autoprefixer";
 import cleanCSS from "gulp-clean-css";
+import autoprefixer from "gulp-autoprefixer";
+import imageOpt from "gulp-image";
+import babel from "babelify";
 import bro from "gulp-bro";
-import babelify from "babelify";
-import ghPages from "gulp-gh-pages";
+import del from "del";
 
 gsass.compiler = require("node-sass");
 
 const routes = {
 	pug: {
-		watch: "src/views/**/*.pug",
-		src: "src/views/layout/index.pug",
-		dest: "build/index.html",
+		src: "./src/templates/*.pug",
+		dest: ".",
 	},
 	img: {
-		src: "src/img/*",
-		dest: "build/img/",
+		src: "./src/img/*",
+		dest: "./img/",
 	},
 	scss: {
-		watch: "src/scss/**/*.scss",
-		src: "src/scss/styles.scss",
-		dest: "build/css/",
+		watch: "./src/scss/**/*.scss",
+		src: "./src/scss/styles.scss",
+		dest: "css/",
 	},
 	js: {
-		watch: "src/js/**/*.js",
-		src: "src/js/main.js",
-		dest: "build/js/",
+		watch: "./src/js/**/*.js",
+		src: "./src/js/main.js",
+		dest: "scripts/",
 	},
 };
 
-const pug = () =>
-	gulp.src(routes.pug.src).pipe(gpug()).pipe(gulp.dest(routes.pug.dest));
+const clean = del([
+	".index.html",
+	routes.img.dest,
+	routes.scss.dest,
+	routes.js.dest,
+]);
+const page = () =>
+	gulp.src(routes.pug.src).pipe(pug()).pipe(gulp.dest(routes.pug.dest));
 
-const clean = () => del(["build/", ".publish"]);
-
-const webserver = () => gulp.src("build").pipe(ws({ livereload: true }));
-
-const img = () =>
+const image = () =>
 	gulp.src(routes.img.src).pipe(imageOpt()).pipe(gulp.dest(routes.img.dest));
 
 const styles = () =>
 	gulp
 		.src(routes.scss.src)
 		.pipe(gsass().on("error", gsass.logError))
-		.pipe(autoprefixer({ browsers: ["last 2 versions"] }))
+		.pipe(autoprefixer({ browsers: [">99.5%"] }))
 		.pipe(cleanCSS())
 		.pipe(gulp.dest(routes.scss.dest));
-
-const scripts = () =>
-	gulp.src(routes.js.src).pipe(
-		bro({
-			transform: [
-				babelify.configure({ presets: ["@babel/preset-env"] }),
-				["uglifyify", { global: true }],
-			],
-		}).pipe(gulp.dest(routes.js.dest))
-	);
-
-const gh = () => gulp.src("build/**/*").pipe(ghPages());
+const scripts = () => {
+	gulp
+		.src(routes.js.src)
+		.pipe(
+			bro({
+				transform: [
+					babel.configure({ presets: ["@babel/preset-env"] }),
+					["uglifyify", { global: true }],
+				],
+			})
+		)
+		.pipe(gulp.dest(routes.js.dest));
+};
 
 const watch = () => {
-	gulp.watch(routes.pug.watch, pug);
-	gulp.watch(routes.img.src, img);
-	gulp.watch(routes.scss.watch, styles);
-	gulp.watch(routes.js.watch, scripts);
+	gulp.watch(routes.pug.src, pug),
+		gulp.watch(routes.scss.watch, styles),
+		gulp.watch(routes.img.src, image),
+		gulp.watch(routes.js.watch, scripts);
 };
 
 const prepare = gulp.series([clean, img]);
+const assets = gulp.series([page, styles, scripts]);
+const postDev = gulp.parallel([watch]);
 
-const assets = gulp.series([pug, styles, scripts]);
-
-const live = gulp.parallel([webserver, watch]);
-
-export const build = gulp.series([prepare, assets]);
-export const dev = gulp.series([build, live]);
-export const deploy = gulp.series([build, gh, clean]);
+export const build = gulp.series([prepare, assets, postDev]);

@@ -1,11 +1,3 @@
-@import url("https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css");
-@import "./mixins";
-@import "./variables";
-* {
-	box-sizing: border-box;
-}
 body {
-	width: 100%;
-	min-height: 100vh;
-	height: auto;
+	background-color: tomato;
 }
