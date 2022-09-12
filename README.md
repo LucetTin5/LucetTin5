@@ -31,10 +31,6 @@
 ![AWS EC2](https://img.shields.io/badge/AWS%20EC2-FF9900?style=flat&logo=AmazonEC2&logoColor=fff)
 ![MongoDB](https://img.shields.io/badge/MongoDB-0FAB50?style=flat&logo=MongoDB&logoColor=fff)
 
-[![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=lucettin5&layout=compact)](https://github.com/lucettin5/github-readme-stats)
-
-![Anurag's GitHub stats](https://github-readme-stats.vercel.app/api?username=lucettin5&show_icons=true&theme=radical)
-
 </div>
    
 ---
