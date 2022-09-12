@@ -23,7 +23,7 @@
 ![Python](https://img.shields.io/badge/Python-33729D?style=flat&logo=python&logoColor=fff)
 ![SCSS](https://img.shields.io/badge/SCSS-C66394?style=flat&logo=sass&logoColor=fff)
 ![yarn](https://img.shields.io/badge/yarn-3B9DC8?style=flat&logo=yarn&logoColor=fff)
-![React](https://img.shields.io/badge/React-61DAFB?style=flat&logo=React&logoColor=fff)
+![React](https://img.shields.io/badge/React-61DAFB?style=flat&logo=React&logoColor=fff)   
 ![Vite](https://img.shields.io/badge/Vite-BD34FE?style=flat&logo=Vite&logoColor=fff)
 ![Typescript](https://img.shields.io/badge/Typescript-007ACC?style=flat&logo=Typescript&logoColor=fff)
 ![Styled-components](https://img.shields.io/badge/Styled--components-D2965D?style=flat&logo=styled-components&logoColor=fff)
