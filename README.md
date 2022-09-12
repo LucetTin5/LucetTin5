@@ -1,7 +1,20 @@
 # LucetTin5
 
-[![Solved.ac
-프로필](http://mazassumnida.wtf/api/v2/generate_badge?boj=frozen1230)](https://solved.ac/frozen1230)
+<div id="header" align="center">
+    <img src="imgs/header.png" />
 
-<img src="https://img.shields.io/badge/React-61DAFB?style=flat&logo=React&logoColor=white" />
+[![Hits](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2Flucettin5%2Fhit-counter&count_bg=%23CFDD30&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=true)](https://hits.seeyoufarm.com)
 
+</div>
+
+---
+
+<br />
+<br />
+<div id="skills" align="center">
+    
+[![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=lucettin5&layout=compact)](https://github.com/lucettin5/github-readme-stats)
+
+![Anurag's GitHub stats](https://github-readme-stats.vercel.app/api?username=lucettin5&show_icons=true&theme=radical)
+
+</div>
