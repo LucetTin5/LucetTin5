@@ -27,7 +27,7 @@
 ![Vite](https://img.shields.io/badge/Vite-BD34FE?style=flat&logo=Vite&logoColor=fff)
 ![Typescript](https://img.shields.io/badge/Typescript-007ACC?style=flat&logo=Typescript&logoColor=fff)
 ![Styled-components](https://img.shields.io/badge/Styled--components-D2965D?style=flat&logo=styled-components&logoColor=fff)
-![React-query](https://img.shields.io/badge/React--query-F73F51?style=flat&logo=React-Query&logoColor=fff)
+<!-- ![React-query](https://img.shields.io/badge/React--query-F73F51?style=flat&logo=React-Query&logoColor=fff) -->
 ![Redux](https://img.shields.io/badge/Redux-764ABC?style=flat&logo=Redux&logoColor=fff)
 ![AWS EC2](https://img.shields.io/badge/AWS%20EC2-FF9900?style=flat&logo=AmazonEC2&logoColor=fff)
 ![MongoDB](https://img.shields.io/badge/MongoDB-0FAB50?style=flat&logo=MongoDB&logoColor=fff)
