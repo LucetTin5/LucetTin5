@@ -20,7 +20,6 @@
 ![HTML](https://img.shields.io/badge/HTML-DD4B25?style=flat&logo=HTML5&logoColor=fff)
 ![CSS](https://img.shields.io/badge/CSS-254BDD?style=flat&logo=css3&logoColor=fff)
 ![Javascript](https://img.shields.io/badge/Javascript-EFD81D?style=flat&logo=Javascript&logoColor=fff)
-![Python](https://img.shields.io/badge/Python-33729D?style=flat&logo=python&logoColor=fff)
 ![SCSS](https://img.shields.io/badge/SCSS-C66394?style=flat&logo=sass&logoColor=fff)
 ![yarn](https://img.shields.io/badge/yarn-3B9DC8?style=flat&logo=yarn&logoColor=fff)
 ![React](https://img.shields.io/badge/React-61DAFB?style=flat&logo=React&logoColor=fff)   
@@ -30,7 +29,6 @@
 ![React-query](https://img.shields.io/badge/React--query-F73F51?style=flat&logo=React-Query&logoColor=fff)
 ![Redux](https://img.shields.io/badge/Redux-764ABC?style=flat&logo=Redux&logoColor=fff)
 ![AWS EC2](https://img.shields.io/badge/AWS%20EC2-FF9900?style=flat&logo=AmazonEC2&logoColor=fff)
-![MongoDB](https://img.shields.io/badge/MongoDB-0FAB50?style=flat&logo=MongoDB&logoColor=fff)
 ![Next.js](https://img.shields.io/badge/Next.js-111?style=flat&logo=Next.js&logoColor=fff)
    
    
